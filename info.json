@@ -1,0 +1,10 @@
+{
+  "name": "quick-bar-swap-ltr",
+  "version": "1.0.0",
+  "title": "Quick-bar Swap Left/Right",
+  "author": "sebride4988",
+  "homepage": "https://github.com/sebride4988/factorio-quick-bar-swap-ltr",
+  "description": "Swap quick-bar slots left/right.",
+  "factorio_version": "2.0",
+  "dependencies": ["? base >= 2.0"]
+}
