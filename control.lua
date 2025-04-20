@@ -2,7 +2,6 @@
 script.on_init(function()
   script.on_event("quick-bar-swap-ltr", function(event)
     local player = game.players[event.player_index]
-    player.print("quick-bar-swap-ltr")
     local current_page = player.get_active_quick_bar_page(1)
 
     -- 청사진 관련 아이템 체크
@@ -12,7 +11,6 @@ script.on_init(function()
       local slot_index = (current_page - 1) * 10 + i
       local item = player.get_quick_bar_slot(slot_index)
       if item and item.name then
-        player.print(string.format("Debug - Slot %d item name: %s", slot_index, item.name))
         for _, blueprint_item in ipairs(blueprint_items) do
           if item.name == blueprint_item then
             player.print({"warning.blueprint-found"})
@@ -29,7 +27,6 @@ script.on_init(function()
     for i = 1, 5 do
       local slot_index = (current_page - 1) * 10 + i
       local item = player.get_quick_bar_slot(slot_index)
-      player.print(string.format("Slot %d: %s", slot_index, item and item.name or "empty"))
       temp_slots[i] = item
     end
 
@@ -38,7 +35,6 @@ script.on_init(function()
       local from_index = (current_page - 1) * 10 + i
       local to_index = (current_page - 1) * 10 + (i - 5)
       local item = player.get_quick_bar_slot(from_index)
-      player.print(string.format("Slot %d: %s", from_index, item and item.name or "empty"))
       player.set_quick_bar_slot(to_index, item)
     end
 
